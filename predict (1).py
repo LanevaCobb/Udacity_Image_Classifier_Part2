@@ -74,7 +74,8 @@ def process_image(image):
     
     # TODO: Process a PIL image for use in a PyTorch model
     
-    im = Image.open(image)
+    #im = Image.open(image)
+    Image.open(image_path, encoding="utf8", errors='ignore')
     im = im.resize((256,256))
     crp = .5*(256-224)
     im = im.crop((crp, crp, 256-crp, 256-crp))
